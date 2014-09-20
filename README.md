@@ -14,16 +14,14 @@ Just execute "python main.py" and see the result on localhost:8080
     2)  In the router, the key is the path and the value is the name of a class. You need to    
         create this class like so:
         
-        ```
-        class HelloWorld(object):
+        `class HelloWorld(object):
             @classmethod
             def get(self):
                 return web_server.serve_page("hello_world")
 
             @classmethod
             def post(self, fields):
-                return web_server.serve_page("hello_world", fields)
-        ```
+                return web_server.serve_page("hello_world", fields)`
     
         The HelloWorld class has 2 class methods (get and post). It uses the serve_page
         method to serve the html page in the views directory.
