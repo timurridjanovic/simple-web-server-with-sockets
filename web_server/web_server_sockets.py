@@ -4,7 +4,7 @@ import socket
 class WebServer(object):
     def __init__(self):
         self.router = {}
-        self.file_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
+        self.file_path = os.getcwd()
 
     def start_server(self):
         host = ''
@@ -68,7 +68,7 @@ class WebServer(object):
             return (["404 Error"], "text/html")
 
     def serve_page(self, page, template_vars=None):
-        with open(self.file_path + "/../views/" + page + ".html", "r") as p:
+        with open(self.file_path + "/views/" + page + ".html", "r") as p:
             template = p.readlines()
             if template_vars == None:
                 return template
@@ -78,14 +78,14 @@ class WebServer(object):
 
     def serve_css(self, path):
         try:
-            with open(self.file_path + "/../" + path, "r") as p:
+            with open(self.file_path + "/" + path, "r") as p:
                 return p.readlines()
         except IOError:
             return ["no such file"]
 
     def serve_javascript(self, path):
         try:
-            with open(self.file_path + "/../" + path, "r") as p:
+            with open(self.file_path + "/" + path, "r") as p:
                 return p.readlines()
         except IOError:
             return ["no such file"]
