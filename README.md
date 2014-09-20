@@ -7,11 +7,13 @@ It's a simple python web server using sockets. It serves static css and javascri
 Just execute "python main.py" and see the result on localhost:8080
 
 * To add another route in order to serve another html page, you need to edit main.py and:
+    
     1)  add the route in the router
         `web_server.router = { "/hello-world": HelloWorld }`
     
     2)  In the router, the key is the path and the value is the name of a class. You need to    
         create this class like so:
+        
         ```
         class HelloWorld(object):
             @classmethod
