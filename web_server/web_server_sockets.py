@@ -1,7 +1,7 @@
 import os
 import socket
 
-class Web_server(object):
+class WebServer(object):
     def __init__(self):
         self.router = {}
         self.file_path = os.path.join(os.getcwd(), os.path.dirname(__file__))
@@ -90,5 +90,5 @@ class Web_server(object):
         except IOError:
             return ["no such file"]
 
-web_server = Web_server()
+web_server = WebServer()
 
